@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  width: 100%;
+  height: 1440px;
+  background-color: #191113;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #111111;
+  border-bottom: solid 2px #606060;
+}
+header .dispo_bars {
+  cursor: pointer;
+}
+header .dispo_bars i {
+  color: #fff;
+  font-size: 30px;
+  margin: 10px 0px 10px 25px;
+}
+header .dispo_categorie {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  left: 0px;
+}
+header .dispo_categorie ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+header .dispo_categorie ul li {
+  padding: 10px 15px;
+  color: #F4D4F4;
+  cursor: pointer;
+  background-color: #111111;
+}
+header .dispo_categorie ul li:hover {
+  background-color: #313131;
+}
+header .dispo_categorie ul .service {
+  border-right: solid 2px #606060;
+}
+header .dispo_categorie ul .realisation {
+  border-right: solid 2px #606060;
+}
+header .dispo_categorie ul .contact {
+  border-radius: 0px 0px 20px 0px;
+  border-right: solid 2px #606060;
+  border-bottom: solid 2px #606060;
+}
+
+.infoEntreprise_container {
+  display: flex;
+  justify-content: center;
+  margin: 150px 0px 150px;
+}
+.infoEntreprise_container .dispo_description {
+  text-align: center;
+  border-radius: 20px;
+}
+.infoEntreprise_container .dispo_description h2 {
+  color: #F4D4F4;
+}
+.infoEntreprise_container .dispo_description .description_p {
+  margin: auto;
+  line-height: 1.3;
+  text-align: center;
+  max-width: 800px;
+  color: #F4D4F4;
+}
+
+.infoTeams {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px 0px 10px;
+  background-color: #201320;
+}
+.infoTeams article {
+  padding: 0px 0px 5px;
+}
+.infoTeams article img {
+  width: 300px;
+  height: 300px;
+  border: solid 2px #92549C;
+  border-radius: 150px 150px 0px 100px;
+  cursor: pointer;
+}
+.infoTeams article p {
+  display: none;
+  margin: 0px 0px 0px 90px;
+  color: #F4D4F4;
+  line-height: 1.3;
+  text-align: center;
+  max-width: 190px;
+}
+
+/*# sourceMappingURL=index.css.map */

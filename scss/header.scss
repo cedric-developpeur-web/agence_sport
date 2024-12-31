@@ -1,0 +1,61 @@
+@use '../scss/variable.scss' as *;
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: $color_header;
+  border-bottom: solid 2px $boder_header;
+
+  .dispo_bars {
+    cursor: pointer;
+
+    i {
+      color: $icone_header;
+      font-size: 30px;
+      margin: 10px 0px 10px 25px;
+    }
+  }
+
+  .dispo_categorie {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 0px;
+
+
+    ul {
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
+
+
+      li {
+        padding: 10px 15px;
+        color: $text;
+        cursor: pointer;
+        background-color: $color_menu;
+
+
+        &:hover {
+          background-color: $hover_menu;
+        }
+      }
+
+      .service {
+        border-right: solid 2px $boder_header;
+      }
+
+      .realisation {
+        border-right: solid 2px $boder_header;
+      }
+
+      .contact {
+        border-radius: 0px 0px 20px 0px;
+        border-right: solid 2px $boder_header;
+        border-bottom: solid 2px $boder_header ;
+      }
+    }
+  }
+}
