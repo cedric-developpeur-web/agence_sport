@@ -4,7 +4,7 @@
     "description":"Soraya notre organisatrice d'événements sportifs",
     "picture":[
       {
-        "src":"/pictures/soraya.png",
+        "src":"./pictures/soraya.png",
         "alt": "image de soraya"
       }
     ]
@@ -13,7 +13,7 @@
     "description":"Pedro notre éducateur sportif pour initier nos nouveaux pratiquants",
     "picture":[
       {
-        "src":"/pictures/pedro.png",
+        "src":"./pictures/pedro.png",
         "alt": "image de Pedro"
       }
     ]
@@ -22,7 +22,7 @@
     "description":"Marc notre commercial, qui est en charge de trouver des sponsors pour favoriser l'accès au sport",
     "picture":[
       {
-        "src":"/pictures/marc.png",
+        "src":"./pictures/marc.png",
         "alt": "image de Marc"
       }
     ]
