@@ -11,25 +11,21 @@ function configHeader() {
   icone.classList.add('fa-solid', 'fa-bars');
   const nav = document.createElement('nav');
   nav.classList.add('dispo_categorie');
+  // création de la liste des catégories
   const ul = document.createElement('ul');
-  const service = document.createElement('li');
-  service.classList.add('service');
-  service.textContent = 'Service';
-  const realisation = document.createElement('li');
-  realisation.classList.add('realisation');
-  realisation.textContent = 'Réalisation';
-  const contact = document.createElement('li');
-  contact.classList.add('contact');
-  contact.textContent = 'Contact';
-
+  // text vient initialisé le tableau des catégorie qui vient crée chaque li
+  ['service', 'realisation', 'contact'].forEach((text, index) => {
+    const li = document.createElement('li');
+    // index vient attribué la bonne class css par rapport à ça position 
+    li.classList.add(['service', 'realisation', 'contact'][index]);
+    li.textContent = text;
+    ul.appendChild(li);
+  })
   // organisation de la structure du header
   header.appendChild(posiIcone);
   posiIcone.appendChild(icone);
   header.appendChild(nav);
   nav.appendChild(ul);
-  ul.appendChild(service);
-  ul.appendChild(realisation);
-  ul.appendChild(contact);
 } configHeader();
 
 function affichageCategorie() {
@@ -38,8 +34,8 @@ function affichageCategorie() {
   // condition du changement d'etat de la class dispo_categorie qui vient s'afficher au clic de l'icone
   if (icon && affichageNav) {
     affichageNav.style.display = 'none';
-    icon.addEventListener('click', () => {
-      event.stopPropagation();
+    icon.addEventListener('click', (event) => {
+      event.stopPropagation(event);
       if (affichageNav.style.display === 'none') {
         affichageNav.style.display = 'flex';
       } else {
