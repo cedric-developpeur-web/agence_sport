@@ -1,8 +1,8 @@
 // importation fonctions des fichiers structurel + interractive du header
-import { configHeader } from '/header.js';
-import { affichageCategorie } from '/header.js';
-import { configInfoEntreprise } from '/infoEntreprise.js';
-import { infoEmployed } from '/employed.js';
+import { configHeader } from './header';
+import { affichageCategorie } from './header.js';
+import { configInfoEntreprise } from './infoEntreprise.js';
+import { infoEmployed } from './employed.js';
 
 // appel fonctions structurel + interractive du site via leur fichier js
 configHeader();
