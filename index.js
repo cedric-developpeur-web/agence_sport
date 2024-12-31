@@ -115,25 +115,19 @@ async function infoEmployed() {
       infoTeams.appendChild(BaliseArticle);
 
       // Événement pour afficher ou masquer le paragraphe au clic sur l'image
-      baliseImg.addEventListener('click', (event) => {
-        event.stopPropagation();
-        if (baliseP.style.display === 'none' || baliseP.style.display === '') {
-          baliseP.style.display = 'block';
-        } else {
-          baliseP.style.display = 'none';
-        }
-      });
+      baliseImg.addEventListener('mouseenter', () => {
+        baliseP.style.display = 'block';
+        baliseImg.style.transition = 'transform 0.8s ease, margin 0.8s ease';
+        baliseImg.style.transform = 'scale(1)';
 
-      // Cacher le paragraphe si on clique ailleurs que sur l'image
-      document.addEventListener('click', (event) => {
-        if (baliseP.style.display === 'block') {
-          if (!baliseImg.contains(event.target)) {
-            baliseP.style.display = 'none';
-          }
-        }
+      });
+      baliseImg.addEventListener('mouseleave', () => {
+        baliseP.style.display = 'none';
+        baliseImg.style.transition = 'transform 0.5s ease, margin 0.5s ease';
+        baliseImg.style.transform = 'scale(0.80)';
+
       });
     });
-
     // Ajoute la section infoTeams au parent main
     parentMain.appendChild(infoTeams);
 
@@ -142,3 +136,6 @@ async function infoEmployed() {
     console.error('Erreur lors de la récupération du fichier teams.json', error);
   }
 } infoEmployed();
+
+// ******************************PARTI FOOTER*************************
+const footer = document.querySelector('footer');
