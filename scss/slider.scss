@@ -1,0 +1,13 @@
+@use '../scss/variable.scss' as *;
+
+.slide {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0px 0px;
+
+  img {
+    width: 220px;
+    height: 300px;
+    border-radius: 50px;
+  }
+}

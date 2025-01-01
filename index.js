@@ -81,8 +81,8 @@ async function infoEmployed() {
   const parentMain = document.querySelector('main');
 
   try {
-    // Requête fetch pour récupérer le fichier teams.json
-    const response = await fetch('./grouped.json');
+    // Requête fetch pour récupérer les données du fichier data
+    const response = await fetch('./data.json');
 
     // Vérifie si la réponse est OK
     if (!response.ok) {
@@ -99,32 +99,32 @@ async function infoEmployed() {
 
     // Boucle pour parcourir les équipes et créer les éléments HTML
     group.forEach(team => {
-      const BaliseArticle = document.createElement('article');
-      const baliseImg = document.createElement('img');
-      baliseImg.src = team.picture[0].src;
-      baliseImg.alt = team.picture[0].alt;
+      const Article = document.createElement('article');
+      const img = document.createElement('img');
+      img.src = team.picture[0].src;
+      img.alt = team.picture[0].alt;
 
       const divP = document.createElement('div');
       divP.classList.add('card_p');
-      const baliseP = document.createElement('p');
-      baliseP.textContent = team.description;
-      divP.appendChild(baliseP);
+      const p = document.createElement('p');
+      p.textContent = team.description;
+      divP.appendChild(p);
 
-      BaliseArticle.appendChild(baliseImg);
-      BaliseArticle.appendChild(divP);
-      infoTeams.appendChild(BaliseArticle);
+      Article.appendChild(img);
+      Article.appendChild(divP);
+      infoTeams.appendChild(Article);
 
       // Événement pour afficher ou masquer le paragraphe au clic sur l'image
-      baliseImg.addEventListener('mouseenter', () => {
-        baliseP.style.display = 'block';
-        baliseImg.style.transition = 'transform 0.8s ease, margin 0.8s ease';
-        baliseImg.style.transform = 'scale(1)';
+      img.addEventListener('mouseenter', () => {
+        p.style.display = 'block';
+        img.style.transition = 'transform 0.8s ease, margin 0.8s ease';
+        img.style.transform = 'scale(1)';
 
       });
-      baliseImg.addEventListener('mouseleave', () => {
-        baliseP.style.display = 'none';
-        baliseImg.style.transition = 'transform 0.5s ease, margin 0.5s ease';
-        baliseImg.style.transform = 'scale(0.80)';
+      img.addEventListener('mouseleave', () => {
+        p.style.display = 'none';
+        img.style.transition = 'transform 0.5s ease, margin 0.5s ease';
+        img.style.transform = 'scale(0.80)';
 
       });
     });
@@ -136,6 +136,38 @@ async function infoEmployed() {
     console.error('Erreur lors de la récupération du fichier teams.json', error);
   }
 } infoEmployed();
+
+// ******************************PARTI Slider *************************
+async function affichageSlider() {
+  const parentMain = document.querySelector('main');
+  try {
+    const response = await fetch('./data.json');
+
+    // Vérifie si la réponse est OK
+    if (!response.ok) {
+      throw new Error(`Erreur HTTP : ${response.status}`);
+    }
+    const data = await response.json();
+    const cardSlider = data.slider;
+    // structure html du slider
+    const slider = document.createElement('section');
+    slider.classList.add('slide');
+
+    cardSlider.forEach(slide => {
+      const img = document.createElement('img');
+      img.src = slide.picture[0].src;
+      img.alt = slide.picture[0].alt;
+
+      // organisation parent enfants
+      slider.appendChild(img);
+    })
+
+    parentMain.appendChild(slider);
+
+  } catch (error) {
+    console.error('erreur élément slider', error);
+  }
+} affichageSlider();
 
 // ******************************PARTI FOOTER*************************
 const footer = document.querySelector('footer');
