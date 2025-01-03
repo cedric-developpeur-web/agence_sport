@@ -138,6 +138,8 @@ async function infoEmployed() {
 } infoEmployed();
 
 // ******************************PARTI Slider *************************
+let index = 0
+
 async function affichageSlider() {
   const parentMain = document.querySelector('main');
   try {
@@ -153,10 +155,11 @@ async function affichageSlider() {
     const slider = document.createElement('section');
     slider.classList.add('slide');
 
-    cardSlider.forEach(slide => {
+    cardSlider.forEach((slide, index) => {
       const containerSlide = document.createElement('div');
       containerSlide.classList.add('container_card');
-
+      // vient ajouter la classe 'active' seulement a la card qui sera selectionner au click d'un chevron
+      if (index === 0) containerSlide.classList.add('active');
       const img = document.createElement('img');
       img.src = slide.picture[0].src;
       img.alt = slide.picture[0].alt;
@@ -169,19 +172,44 @@ async function affichageSlider() {
       containerSlide.appendChild(p);
     })
 
-    const leftArrow = document.createElement('i');
-    leftArrow.textContent = '<';
-    const rightArrow = document.createElement('i');
-    rightArrow.textContent = '>';
+    const chevronLeft = document.createElement('i');
+    chevronLeft.classList.add('fa-solid', 'fa-chevron-left');
+    const chevronRight = document.createElement('i');
+    chevronRight.classList.add('fa-solid', 'fa-chevron-right');
 
     parentMain.appendChild(slider);
-    slider.insertAdjacentElement('Afterbegin', leftArrow);
-    slider.insertAdjacentElement('Beforeend', rightArrow);
+    slider.insertAdjacentElement('Afterbegin', chevronLeft);
+    slider.insertAdjacentElement('Beforeend', chevronRight);
+
+    evenementSlide(cardSlider);
 
   } catch (error) {
     console.error('erreur élément slider', error);
   }
 } affichageSlider();
 
+function evenementSlide(cardSlider) {
+  const container = document.querySelectorAll('.slide .container_card');
+  const chevronRight = document.querySelector('.slide .fa-chevron-right');
+  chevronRight.addEventListener("click", () => {
+    container[index].classList.remove('active');
+    index++;
+    if (index > cardSlider.length - 1) {
+      index = 0;
+    }
+    container[index].classList.add('active');
+    // console.log('slide data', cardSlider[index]);
+  });
+  const chevronLeft = document.querySelector('.slide .fa-chevron-left');
+  chevronLeft.addEventListener("click", () => {
+    container[index].classList.remove('active');
+    index--;
+    if (index < 0) {
+      index = cardSlider.length - 1;
+    }
+    container[index].classList.add('active');
+    // console.log('data slide', cardSlider[index]);
+  });
+}
 // ******************************PARTI FOOTER*************************
 const footer = document.querySelector('footer');
