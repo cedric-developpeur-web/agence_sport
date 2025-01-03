@@ -3,11 +3,40 @@
 .slide {
   display: flex;
   justify-content: center;
-  margin: 100px 0px 0px;
+  margin: 250px 0px 0px;
+  gap: 20px;
 
-  img {
+  i {
+    color: #fff;
+    font-size: 30px;
+  }
+
+  .container_card {
     width: 220px;
     height: 300px;
-    border-radius: 50px;
+    background: #291F43;
+    border-radius: 42px 42px 10px 10px;
+    border-bottom: solid 7.4px $card_slide;
+    transform: scale(0.85);
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.2);
+      border-bottom: solid 7.4px $hover_card_slide;
+    }
+
+    img {
+      width: 220px;
+      height: 180px;
+      border-radius: 40px 40px 0px 0px;
+      border-bottom: solid 2px #473876;
+    }
+
+    p {
+      margin: 30px 0px 0px;
+      text-align: center;
+      max-width: 215px;
+      color: $text;
+    }
   }
 }

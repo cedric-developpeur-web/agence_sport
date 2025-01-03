@@ -32,38 +32,47 @@
     {
       "picture":[
         {
-          "src":"./pictures/basketball.jpg",
+          "src":"./pictures/football.webp",
           "alt": "image de soraya"
         }
       ],
-      "description":"Soraya notre organisatrice d'événements sportifs"
+      "description":"Nous proposons une initiation aux basketball ces trop cool"
     },
      {
       "picture":[
         {
-          "src":"./pictures/basketball.jpg",
+          "src":"./pictures/basketball.webp",
           "alt": "image de soraya"
         }
       ],
-      "description":"Soraya notre organisatrice d'événements sportifs"
+      "description":"Nous proposons une initiation aux basketball ces trop cool"
     },
      {
       "picture":[
         {
-          "src":"./pictures/basketball.jpg",
+          "src":"./pictures/handisport.webp",
           "alt": "image de soraya"
         }
       ],
-      "description":"Soraya notre organisatrice d'événements sportifs"
+      "description":"Nous proposons une initiation aux basketball ces trop cool"
     },
      {
       "picture":[
         {
-          "src":"./pictures/basketball.jpg",
+          "src":"./pictures/velo.webp",
           "alt": "image de soraya"
         }
       ],
-      "description":"Soraya notre organisatrice d'événements sportifs"
+      "description":"Nous proposons une initiation aux basketball ces trop cool"
+    },
+     {
+      "picture":[
+        {
+          "src":"./pictures/course.webp",
+          "alt": "image de soraya"
+        }
+      ],
+      "description":"Nous proposons une initiation aux basketball ces trop cool"
     }
   ]
 }

@@ -154,15 +154,29 @@ async function affichageSlider() {
     slider.classList.add('slide');
 
     cardSlider.forEach(slide => {
+      const containerSlide = document.createElement('div');
+      containerSlide.classList.add('container_card');
+
       const img = document.createElement('img');
       img.src = slide.picture[0].src;
       img.alt = slide.picture[0].alt;
 
+      const p = document.createElement('p');
+      p.textContent = slide.description;
       // organisation parent enfants
-      slider.appendChild(img);
+      slider.appendChild(containerSlide);
+      containerSlide.appendChild(img);
+      containerSlide.appendChild(p);
     })
 
+    const leftArrow = document.createElement('i');
+    leftArrow.textContent = '<';
+    const rightArrow = document.createElement('i');
+    rightArrow.textContent = '>';
+
     parentMain.appendChild(slider);
+    slider.insertAdjacentElement('Afterbegin', leftArrow);
+    slider.insertAdjacentElement('Beforeend', rightArrow);
 
   } catch (error) {
     console.error('erreur élément slider', error);
